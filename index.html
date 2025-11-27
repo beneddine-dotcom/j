@@ -156,12 +156,14 @@
         }
 
         .book-image {
-            width: 200px;
-            height: 280px;
+            width: 100%;
+            max-width: 250px;
+            height: 300px;
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 1rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 3px solid var(--primary-blue);
         }
 
         .book-title {
@@ -245,12 +247,16 @@
             font-weight: 700;
             color: var(--accent-green);
             text-decoration: none;
+            display: block;
+            margin: 1rem 0;
         }
 
         .email-link {
             color: var(--accent-green);
             text-decoration: none;
             font-weight: 600;
+            display: block;
+            margin: 1rem 0;
         }
 
         /* Footer */
@@ -296,6 +302,25 @@
         .fade-in {
             animation: fadeInUp 0.8s ease-out;
         }
+
+        .book-features {
+            text-align: right;
+            margin: 1rem 0;
+        }
+
+        .book-features li {
+            margin: 0.5rem 0;
+            padding-right: 1rem;
+            position: relative;
+        }
+
+        .book-features li:before {
+            content: "✓";
+            color: var(--accent-green);
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
     </style>
 </head>
 <body>
@@ -338,30 +363,48 @@
             <h2 class="section-title">الكتب التعليمية</h2>
             <div class="books-grid">
                 <div class="book-card fade-in">
-                    <img src="https://ibb.co/TMr6vK6c" alt="كتاب لغة الرياضيات المتحركة" class="book-image" onerror="this.src='https://via.placeholder.com/200x280/2E86AB/FFFFFF?text=كتاب+مانيم'">
+                    <img src="https://i.ibb.co/4Fy3y0C/manim-book.jpg" alt="كتاب لغة الرياضيات المتحركة" class="book-image">
                     <h3 class="book-title">لغة الرياضيات المتحركة</h3>
                     <p class="book-description">
                         أول كتاب عربي متخصص في مكتبة Manim العالمية، يقدم تقنيات متقدمة لإنشاء رسوم متحركة 
-                        للرياضيات باستخدام Python. مناسب للمعلمين والباحثين والطلاب المتقدمين.
+                        للرياضيات باستخدام Python.
                     </p>
+                    <ul class="book-features">
+                        <li>أول كتاب عربي في مكتبة Manim</li>
+                        <li>تقنيات متقدمة للرسوم المتحركة</li>
+                        <li>أمثلة عملية وتطبيقات متنوعة</li>
+                        <li>ملائم للمعلمين والباحثين</li>
+                    </ul>
                 </div>
 
                 <div class="book-card fade-in">
-                    <img src="https://ibb.co/5X7kwqxv" alt="كتاب الإنشاء بالجيوجيبرا" class="book-image" onerror="this.src='https://via.placeholder.com/200x280/1B4B6F/FFFFFF?text=كتاب+GeoGebra'">
+                    <img src="https://i.ibb.co/0Q8L0Zz/geogebra-book.jpg" alt="كتاب الإنشاء بالجيوجيبرا" class="book-image">
                     <h3 class="book-title">الإنشاءات المتقدمة في GeoGebra</h3>
                     <p class="book-description">
                         دليل شامل لإنشاء الأنشطة التفاعلية والرسوم المتحركة في GeoGebra، يغطي جميع المستويات 
-                        من المبتدئ إلى المحترف مع أمثلة تطبيقية متنوعة.
+                        من المبتدئ إلى المحترف.
                     </p>
+                    <ul class="book-features">
+                        <li>دليل شامل للمبتدئين والمحترفين</li>
+                        <li>أنشطة تفاعلية جاهزة</li>
+                        <li>تطبيقات في جميع فروع الرياضيات</li>
+                        <li>شرح مفصل بالأمثلة</li>
+                    </ul>
                 </div>
 
                 <div class="book-card fade-in">
-                    <img src="https://ibb.co/8nQCLN6X" alt="مجموعة كتب مانيم" class="book-image" onerror="this.src='https://via.placeholder.com/200x280/E63946/FFFFFF?text=مجموعة+مانيم'">
+                    <img src="https://i.ibb.co/7Q7jK2L/manim-collection.jpg" alt="مجموعة كتب مانيم" class="book-image">
                     <h3 class="book-title">مجموعة كتب Manim المتقدمة</h3>
                     <p class="book-description">
                         سلسلة متكاملة تغطي الجوانب المتقدمة في برمجة الرسوم المتحركة للرياضيات، تشمل تقنيات 
-                        ثلاثية الأبعاد والتأثيرات البصرية المتقدمة.
+                        ثلاثية الأبعاد والتأثيرات البصرية.
                     </p>
+                    <ul class="book-features">
+                        <li>سلسلة متكاملة متقدمة</li>
+                        <li>تقنيات ثلاثية الأبعاد</li>
+                        <li>تأثيرات بصرية متطورة</li>
+                        <li>مشاريع عملية متكاملة</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -373,21 +416,33 @@
             <h2 class="section-title">برمجة Python والمكتبات الرياضية</h2>
             <div class="books-grid">
                 <div class="book-card fade-in">
-                    <img src="https://ibb.co/JjQzs8nn" alt="برمجة بايثون" class="book-image" onerror="this.src='https://via.placeholder.com/200x280/2A9D8F/FFFFFF?text=Python+Programming'">
+                    <img src="https://i.ibb.co/0j7W5K2/python-libraries.jpg" alt="برمجة بايثون" class="book-image">
                     <h3 class="book-title">برمجة Python للرياضيات</h3>
                     <p class="book-description">
                         تعلم استخدام Python مع مكتبات NumPy, Matplotlib, SymPy لحل المسائل الرياضية 
                         المعقدة وإنشاء الرسوم البيانية الاحترافية.
                     </p>
+                    <ul class="book-features">
+                        <li>مكتبات NumPy و Matplotlib</li>
+                        <li>حل المسائل الرياضية</li>
+                        <li>رسوم بيانية احترافية</li>
+                        <li>أمثلة تطبيقية شاملة</li>
+                    </ul>
                 </div>
 
                 <div class="book-card fade-in">
-                    <img src="https://ibb.co/fY0TFqDJ" alt="كود برمجي" class="book-image" onerror="this.src='https://via.placeholder.com/200x280/7209B7/FFFFFF?text=Python+Code'">
-                    <h3 class="book-title">التطبيقات العملية</h3>
+                    <img src="https://i.ibb.co/4T2V5h2/python-code.jpg" alt="كود برمجي" class="book-image">
+                    <h3 class="book-title">التطبيقات العملية في Python</h3>
                     <p class="book-description">
                         أمثلة عملية وتطبيقات حية لاستخدام Python في التحليل الرياضي، حل المعادلات، 
                         والتمثيل البياني للمفاهيم الرياضية المتقدمة.
                     </p>
+                    <ul class="book-features">
+                        <li>تطبيقات عملية مباشرة</li>
+                        <li>تحليل رياضي متقدم</li>
+                        <li>حل المعادلات الرياضية</li>
+                        <li>تمثيل بياني متكامل</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -400,14 +455,14 @@
             <div class="geogebra-grid">
                 <div class="geogebra-card fade-in">
                     <h3>الاعداد المركبة - موارد تفاعلية</h3>
-                    <p>ملف تفاعلي متحرك يشرح مفهوم الأعداد المركبة وتمثيلها في المستوى الإحداثي</p>
-                    <a href="https://www.geogebra.org/m/gs6sprgr" class="geogebra-link" target="_blank">فتح المورد</a>
+                    <p>ملف تفاعلي متحرك يشرح مفهوم الأعداد المركبة وتمثيلها في المستوى الإحداثي بشكل تفاعلي ومبسط</p>
+                    <a href="https://www.geogebra.org/m/gs6sprgr" class="geogebra-link" target="_blank">فتح المورد التفاعلي</a>
                 </div>
 
                 <div class="geogebra-card fade-in">
                     <h3>اتجاه تغير الدالة</h3>
-                    <p>مورد تفاعلي مع مذكرة تعليمية يشرح اتجاه تغير الدوال وتحديد الفترات</p>
-                    <a href="https://www.geogebra.org/m/rmxcwyfb" class="geogebra-link" target="_blank">فتح المورد</a>
+                    <p>مورد تفاعلي مع مذكرة تعليمية يشرح اتجاه تغير الدوال وتحديد الفترات بشكل مرئي ومبسط</p>
+                    <a href="https://www.geogebra.org/m/rmxcwyfb" class="geogebra-link" target="_blank">فتح المورد التفاعلي</a>
                 </div>
             </div>
         </div>
@@ -419,16 +474,19 @@
             <h2 class="section-title" style="color: var(--white);">اتصل بنا لطلب الكتب</h2>
             <div class="contact-info">
                 <div class="contact-item fade-in">
-                    <h3>الهاتف</h3>
+                    <h3>📞 الهاتف</h3>
                     <a href="tel:0558474456" class="phone-number">0558474456</a>
+                    <p>متاحون للرد على استفساراتكم يومياً</p>
                 </div>
                 <div class="contact-item fade-in">
-                    <h3>البريد الإلكتروني</h3>
+                    <h3>📧 البريد الإلكتروني</h3>
                     <a href="mailto:beneddineinps@gmail.com" class="email-link">beneddineinps@gmail.com</a>
+                    <p>لطلبات الكتب والاستشارات التعليمية</p>
                 </div>
                 <div class="contact-item fade-in">
-                    <h3>التواصل</h3>
-                    <p>متاحون للإجابة على استفساراتكم وتلقي طلبات الكتب</p>
+                    <h3>🕒 أوقات التواصل</h3>
+                    <p>الأحد - الخميس</p>
+                    <p>9:00 ص - 5:00 م</p>
                 </div>
             </div>
         </div>
@@ -474,6 +532,13 @@
                     });
                 }
             });
+        });
+
+        // Handle image errors
+        document.querySelectorAll('img').forEach(img => {
+            img.onerror = function() {
+                this.src = 'https://via.placeholder.com/250x300/2E86AB/FFFFFF?text=' + encodeURIComponent(this.alt);
+            };
         });
     </script>
 </body>
