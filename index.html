@@ -164,6 +164,15 @@
             margin-bottom: 1rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             border: 3px solid var(--primary-blue);
+            background: linear-gradient(135deg, var(--light-bg), var(--white));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-blue);
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 1rem;
         }
 
         .book-title {
@@ -306,11 +315,12 @@
         .book-features {
             text-align: right;
             margin: 1rem 0;
+            list-style: none;
         }
 
         .book-features li {
             margin: 0.5rem 0;
-            padding-right: 1rem;
+            padding-right: 1.5rem;
             position: relative;
         }
 
@@ -320,6 +330,16 @@
             font-weight: bold;
             position: absolute;
             right: 0;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            text-align: center;
         }
     </style>
 </head>
@@ -363,7 +383,9 @@
             <h2 class="section-title">الكتب التعليمية</h2>
             <div class="books-grid">
                 <div class="book-card fade-in">
-                    <img src="https://i.ibb.co/4Fy3y0C/manim-book.jpg" alt="كتاب لغة الرياضيات المتحركة" class="book-image">
+                    <div class="book-image image-placeholder">
+                        كتاب لغة الرياضيات المتحركة<br>باستخدام Manim
+                    </div>
                     <h3 class="book-title">لغة الرياضيات المتحركة</h3>
                     <p class="book-description">
                         أول كتاب عربي متخصص في مكتبة Manim العالمية، يقدم تقنيات متقدمة لإنشاء رسوم متحركة 
@@ -378,7 +400,9 @@
                 </div>
 
                 <div class="book-card fade-in">
-                    <img src="https://i.ibb.co/0Q8L0Zz/geogebra-book.jpg" alt="كتاب الإنشاء بالجيوجيبرا" class="book-image">
+                    <div class="book-image image-placeholder">
+                        الإنشاءات المتقدمة<br>في GeoGebra
+                    </div>
                     <h3 class="book-title">الإنشاءات المتقدمة في GeoGebra</h3>
                     <p class="book-description">
                         دليل شامل لإنشاء الأنشطة التفاعلية والرسوم المتحركة في GeoGebra، يغطي جميع المستويات 
@@ -393,7 +417,9 @@
                 </div>
 
                 <div class="book-card fade-in">
-                    <img src="https://i.ibb.co/7Q7jK2L/manim-collection.jpg" alt="مجموعة كتب مانيم" class="book-image">
+                    <div class="book-image image-placeholder">
+                        مجموعة كتب Manim المتقدمة<br>وتطبيقات Python
+                    </div>
                     <h3 class="book-title">مجموعة كتب Manim المتقدمة</h3>
                     <p class="book-description">
                         سلسلة متكاملة تغطي الجوانب المتقدمة في برمجة الرسوم المتحركة للرياضيات، تشمل تقنيات 
@@ -416,7 +442,9 @@
             <h2 class="section-title">برمجة Python والمكتبات الرياضية</h2>
             <div class="books-grid">
                 <div class="book-card fade-in">
-                    <img src="https://i.ibb.co/0j7W5K2/python-libraries.jpg" alt="برمجة بايثون" class="book-image">
+                    <div class="book-image image-placeholder">
+                        برمجة Python<br>لحل المسائل الرياضية
+                    </div>
                     <h3 class="book-title">برمجة Python للرياضيات</h3>
                     <p class="book-description">
                         تعلم استخدام Python مع مكتبات NumPy, Matplotlib, SymPy لحل المسائل الرياضية 
@@ -431,7 +459,9 @@
                 </div>
 
                 <div class="book-card fade-in">
-                    <img src="https://i.ibb.co/4T2V5h2/python-code.jpg" alt="كود برمجي" class="book-image">
+                    <div class="book-image image-placeholder">
+                        التطبيقات العملية<br>في Python
+                    </div>
                     <h3 class="book-title">التطبيقات العملية في Python</h3>
                     <p class="book-description">
                         أمثلة عملية وتطبيقات حية لاستخدام Python في التحليل الرياضي، حل المعادلات، 
@@ -532,13 +562,6 @@
                     });
                 }
             });
-        });
-
-        // Handle image errors
-        document.querySelectorAll('img').forEach(img => {
-            img.onerror = function() {
-                this.src = 'https://via.placeholder.com/250x300/2E86AB/FFFFFF?text=' + encodeURIComponent(this.alt);
-            };
         });
     </script>
 </body>
