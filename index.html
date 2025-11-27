@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدكتور بن الدين بويعقوب - الخبير العالمي في الرياضيات والبرمجة</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-blue: #2E86AB;
+            --secondary-blue: #1B4B6F;
+            --accent-red: #E63946;
+            --accent-green: #2A9D8F;
+            --accent-purple: #7209B7;
+            --light-bg: #F8F9FA;
+            --white: #FFFFFF;
+            --text-dark: #2D3748;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-item {
+            color: var(--secondary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: var(--text-dark);
+        }
+
+        /* Books Section */
+        .books-section {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--secondary-blue);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-red), var(--accent-purple));
+            border-radius: 2px;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .book-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            text-align: center;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-blue);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .book-image {
+            width: 200px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .book-title {
+            font-size: 1.4rem;
+            color: var(--secondary-blue);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .book-description {
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        /* GeoGebra Section */
+        .geogebra-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
+        }
+
+        .geogebra-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .geogebra-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .geogebra-link {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-green), var(--primary-blue));
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .geogebra-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 0;
+            background: var(--secondary-blue);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-green);
+        }
+
+        .phone-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            text-decoration: none;
+        }
+
+        .email-link {
+            color: var(--accent-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>الدكتور بن الدين بويعقوب</h1>
+                <p>خبير عالمي في الرياضيات المتقدمة والبرمجة التعليمية</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="#books" class="nav-item">الكتب التعليمية</a>
+                <a href="#geogebra" class="nav-item">موارد GeoGebra</a>
+                <a href="#python" class="nav-item">برمجة Python</a>
+                <a href="#contact" class="nav-item">اتصل بنا</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2 class="fade-in">التميز في تعليم الرياضيات والبرمجة</h2>
+            <p class="fade-in">
+                نقدم أحدث الأساليب التعليمية في الرياضيات المتقدمة والبرمجة، من خلال كتب متخصصة وموارد تفاعلية 
+                تساعد المعلمين والطلاب على فهم المفاهيم المعقدة بسهولة ويسر.
+            </p>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="books" class="books-section">
+        <div class="container">
+            <h2 class="section-title">الكتب التعليمية</h2>
+            <div class="books-grid">
+                <div class="book-card fade-in">
+                    <img src="https://ibb.co/TMr6vK6c" alt="كتاب لغة الرياضيات المتحركة" class="book-image" onerror="this.src='https://via.placeholder.com/200x280/2E86AB/FFFFFF?text=كتاب+مانيم'">
+                    <h3 class="book-title">لغة الرياضيات المتحركة</h3>
+                    <p class="book-description">
+                        أول كتاب عربي متخصص في مكتبة Manim العالمية، يقدم تقنيات متقدمة لإنشاء رسوم متحركة 
+                        للرياضيات باستخدام Python. مناسب للمعلمين والباحثين والطلاب المتقدمين.
+                    </p>
+                </div>
+
+                <div class="book-card fade-in">
+                    <img src="https://ibb.co/5X7kwqxv" alt="كتاب الإنشاء بالجيوجيبرا" class="book-image" onerror="this.src='https://via.placeholder.com/200x280/1B4B6F/FFFFFF?text=كتاب+GeoGebra'">
+                    <h3 class="book-title">الإنشاءات المتقدمة في GeoGebra</h3>
+                    <p class="book-description">
+                        دليل شامل لإنشاء الأنشطة التفاعلية والرسوم المتحركة في GeoGebra، يغطي جميع المستويات 
+                        من المبتدئ إلى المحترف مع أمثلة تطبيقية متنوعة.
+                    </p>
+                </div>
+
+                <div class="book-card fade-in">
+                    <img src="https://ibb.co/8nQCLN6X" alt="مجموعة كتب مانيم" class="book-image" onerror="this.src='https://via.placeholder.com/200x280/E63946/FFFFFF?text=مجموعة+مانيم'">
+                    <h3 class="book-title">مجموعة كتب Manim المتقدمة</h3>
+                    <p class="book-description">
+                        سلسلة متكاملة تغطي الجوانب المتقدمة في برمجة الرسوم المتحركة للرياضيات، تشمل تقنيات 
+                        ثلاثية الأبعاد والتأثيرات البصرية المتقدمة.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Python Programming Section -->
+    <section id="python" class="books-section" style="background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title">برمجة Python والمكتبات الرياضية</h2>
+            <div class="books-grid">
+                <div class="book-card fade-in">
+                    <img src="https://ibb.co/JjQzs8nn" alt="برمجة بايثون" class="book-image" onerror="this.src='https://via.placeholder.com/200x280/2A9D8F/FFFFFF?text=Python+Programming'">
+                    <h3 class="book-title">برمجة Python للرياضيات</h3>
+                    <p class="book-description">
+                        تعلم استخدام Python مع مكتبات NumPy, Matplotlib, SymPy لحل المسائل الرياضية 
+                        المعقدة وإنشاء الرسوم البيانية الاحترافية.
+                    </p>
+                </div>
+
+                <div class="book-card fade-in">
+                    <img src="https://ibb.co/fY0TFqDJ" alt="كود برمجي" class="book-image" onerror="this.src='https://via.placeholder.com/200x280/7209B7/FFFFFF?text=Python+Code'">
+                    <h3 class="book-title">التطبيقات العملية</h3>
+                    <p class="book-description">
+                        أمثلة عملية وتطبيقات حية لاستخدام Python في التحليل الرياضي، حل المعادلات، 
+                        والتمثيل البياني للمفاهيم الرياضية المتقدمة.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GeoGebra Resources Section -->
+    <section id="geogebra" class="geogebra-section">
+        <div class="container">
+            <h2 class="section-title">الموارد التفاعلية في GeoGebra</h2>
+            <div class="geogebra-grid">
+                <div class="geogebra-card fade-in">
+                    <h3>الاعداد المركبة - موارد تفاعلية</h3>
+                    <p>ملف تفاعلي متحرك يشرح مفهوم الأعداد المركبة وتمثيلها في المستوى الإحداثي</p>
+                    <a href="https://www.geogebra.org/m/gs6sprgr" class="geogebra-link" target="_blank">فتح المورد</a>
+                </div>
+
+                <div class="geogebra-card fade-in">
+                    <h3>اتجاه تغير الدالة</h3>
+                    <p>مورد تفاعلي مع مذكرة تعليمية يشرح اتجاه تغير الدوال وتحديد الفترات</p>
+                    <a href="https://www.geogebra.org/m/rmxcwyfb" class="geogebra-link" target="_blank">فتح المورد</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--white);">اتصل بنا لطلب الكتب</h2>
+            <div class="contact-info">
+                <div class="contact-item fade-in">
+                    <h3>الهاتف</h3>
+                    <a href="tel:0558474456" class="phone-number">0558474456</a>
+                </div>
+                <div class="contact-item fade-in">
+                    <h3>البريد الإلكتروني</h3>
+                    <a href="mailto:beneddineinps@gmail.com" class="email-link">beneddineinps@gmail.com</a>
+                </div>
+                <div class="contact-item fade-in">
+                    <h3>التواصل</h3>
+                    <p>متاحون للإجابة على استفساراتكم وتلقي طلبات الكتب</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة © 2024 - الدكتور بن الدين بويعقوب</p>
+            <p>خبير عالمي في الرياضيات المتقدمة والبرمجة التعليمية</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple fade in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
