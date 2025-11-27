@@ -164,15 +164,6 @@
             margin-bottom: 1rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             border: 3px solid var(--primary-blue);
-            background: linear-gradient(135deg, var(--light-bg), var(--white));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--secondary-blue);
-            font-weight: bold;
-            font-size: 1.1rem;
-            text-align: center;
-            padding: 1rem;
         }
 
         .book-title {
@@ -341,6 +332,21 @@
             font-size: 1rem;
             text-align: center;
         }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--primary-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -382,10 +388,10 @@
         <div class="container">
             <h2 class="section-title">الكتب التعليمية</h2>
             <div class="books-grid">
+                <!-- كتاب لغة الرياضيات المتحركة -->
                 <div class="book-card fade-in">
-                    <div class="book-image image-placeholder">
-                        كتاب لغة الرياضيات المتحركة<br>باستخدام Manim
-                    </div>
+                    <img src="https://i.ibb.co/TMr6vK6c/manim-book.jpg" alt="كتاب لغة الرياضيات المتحركة" class="book-image" 
+                         onerror="this.onerror=null; this.src='https://via.placeholder.com/250x300/2E86AB/FFFFFF?text=كتاب+لغة+الرياضيات+المتحركة'">
                     <h3 class="book-title">لغة الرياضيات المتحركة</h3>
                     <p class="book-description">
                         أول كتاب عربي متخصص في مكتبة Manim العالمية، يقدم تقنيات متقدمة لإنشاء رسوم متحركة 
@@ -396,13 +402,14 @@
                         <li>تقنيات متقدمة للرسوم المتحركة</li>
                         <li>أمثلة عملية وتطبيقات متنوعة</li>
                         <li>ملائم للمعلمين والباحثين</li>
+                        <li>تطبيقات ثلاثية الأبعاد</li>
                     </ul>
                 </div>
 
+                <!-- كتاب الإنشاءات المتقدمة في GeoGebra -->
                 <div class="book-card fade-in">
-                    <div class="book-image image-placeholder">
-                        الإنشاءات المتقدمة<br>في GeoGebra
-                    </div>
+                    <img src="https://i.ibb.co/5X7kwqxv/geogebra-book.jpg" alt="كتاب الإنشاء بالجيوجيبرا" class="book-image"
+                         onerror="this.onerror=null; this.src='https://via.placeholder.com/250x300/1B4B6F/FFFFFF?text=كتاب+الإنشاءات+في+GeoGebra'">
                     <h3 class="book-title">الإنشاءات المتقدمة في GeoGebra</h3>
                     <p class="book-description">
                         دليل شامل لإنشاء الأنشطة التفاعلية والرسوم المتحركة في GeoGebra، يغطي جميع المستويات 
@@ -413,23 +420,25 @@
                         <li>أنشطة تفاعلية جاهزة</li>
                         <li>تطبيقات في جميع فروع الرياضيات</li>
                         <li>شرح مفصل بالأمثلة</li>
+                        <li>رسوم متحركة تفاعلية</li>
                     </ul>
                 </div>
 
+                <!-- مجموعة كتب Manim المتقدمة -->
                 <div class="book-card fade-in">
-                    <div class="book-image image-placeholder">
-                        مجموعة كتب Manim المتقدمة<br>وتطبيقات Python
-                    </div>
+                    <img src="https://i.ibb.co/8nQCLN6X/manim-collection.jpg" alt="مجموعة كتب مانيم" class="book-image"
+                         onerror="this.onerror=null; this.src='https://via.placeholder.com/250x300/E63946/FFFFFF?text=مجموعة+كتب+Manim+المتقدمة'">
                     <h3 class="book-title">مجموعة كتب Manim المتقدمة</h3>
                     <p class="book-description">
                         سلسلة متكاملة تغطي الجوانب المتقدمة في برمجة الرسوم المتحركة للرياضيات، تشمل تقنيات 
-                        ثلاثية الأبعاد والتأثيرات البصرية.
+                        ثلاثية الأبعاد والتأثيرات البصرية المتقدمة.
                     </p>
                     <ul class="book-features">
                         <li>سلسلة متكاملة متقدمة</li>
                         <li>تقنيات ثلاثية الأبعاد</li>
                         <li>تأثيرات بصرية متطورة</li>
                         <li>مشاريع عملية متكاملة</li>
+                        <li>تطبيقات Python متقدمة</li>
                     </ul>
                 </div>
             </div>
@@ -441,10 +450,10 @@
         <div class="container">
             <h2 class="section-title">برمجة Python والمكتبات الرياضية</h2>
             <div class="books-grid">
+                <!-- برمجة Python للرياضيات -->
                 <div class="book-card fade-in">
-                    <div class="book-image image-placeholder">
-                        برمجة Python<br>لحل المسائل الرياضية
-                    </div>
+                    <img src="https://i.ibb.co/JjQzs8nn/python-libraries.jpg" alt="برمجة بايثون" class="book-image"
+                         onerror="this.onerror=null; this.src='https://via.placeholder.com/250x300/2A9D8F/FFFFFF?text=برمجة+Python+للرياضيات'">
                     <h3 class="book-title">برمجة Python للرياضيات</h3>
                     <p class="book-description">
                         تعلم استخدام Python مع مكتبات NumPy, Matplotlib, SymPy لحل المسائل الرياضية 
@@ -455,13 +464,14 @@
                         <li>حل المسائل الرياضية</li>
                         <li>رسوم بيانية احترافية</li>
                         <li>أمثلة تطبيقية شاملة</li>
+                        <li>تحليل بيانات متقدم</li>
                     </ul>
                 </div>
 
+                <!-- التطبيقات العملية في Python -->
                 <div class="book-card fade-in">
-                    <div class="book-image image-placeholder">
-                        التطبيقات العملية<br>في Python
-                    </div>
+                    <img src="https://i.ibb.co/fY0TFqDJ/python-code.jpg" alt="كود برمجي" class="book-image"
+                         onerror="this.onerror=null; this.src='https://via.placeholder.com/250x300/7209B7/FFFFFF?text=التطبيقات+العملية+في+Python'">
                     <h3 class="book-title">التطبيقات العملية في Python</h3>
                     <p class="book-description">
                         أمثلة عملية وتطبيقات حية لاستخدام Python في التحليل الرياضي، حل المعادلات، 
@@ -472,6 +482,25 @@
                         <li>تحليل رياضي متقدم</li>
                         <li>حل المعادلات الرياضية</li>
                         <li>تمثيل بياني متكامل</li>
+                        <li>مشاريع عملية جاهزة</li>
+                    </ul>
+                </div>
+
+                <!-- كتاب إضافي -->
+                <div class="book-card fade-in">
+                    <img src="https://i.ibb.co/WC1DWfJ/manim-book2.jpg" alt="كتاب الرياضيات المتحركة" class="book-image"
+                         onerror="this.onerror=null; this.src='https://via.placeholder.com/250x300/2E86AB/FFFFFF?text=الرياضيات+المتحركة+بـManim'">
+                    <h3 class="book-title">الرياضيات المتحركة بتقنيات Manim</h3>
+                    <p class="book-description">
+                        دليل متقدم لإنشاء محتوى تعليمي تفاعلي باستخدام مكتبة Manim، مع أمثلة عملية 
+                        وتطبيقات في مختلف فروع الرياضيات.
+                    </p>
+                    <ul class="book-features">
+                        <li>تقنيات Manim المتقدمة</li>
+                        <li>محتوى تعليمي تفاعلي</li>
+                        <li>أمثلة في جميع التخصصات</li>
+                        <li>تحريك المعادلات والدوال</li>
+                        <li>إنتاج فيديوهات تعليمية</li>
                     </ul>
                 </div>
             </div>
@@ -561,6 +590,17 @@
                         block: 'start'
                     });
                 }
+            });
+        });
+
+        // Handle image loading states
+        document.querySelectorAll('.book-image').forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            
+            img.addEventListener('error', function() {
+                console.log('Failed to load image:', this.src);
             });
         });
     </script>
